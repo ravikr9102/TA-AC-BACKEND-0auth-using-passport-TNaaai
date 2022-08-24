@@ -1,0 +1,11 @@
+<a href="/users"">Back</a> <br>
+<a href="/users/<%= userId%>/articles/new">Add Article</a> <br>
+<a href="/users/logout">Logout</a> <br>
+
+<% user.articles.forEach((article)=>{ %>
+    <h2>
+        <a href="/users/<%= userId%>/articles/<%= article.slug%>">
+            <%= article.title %>
+        </a>
+    </h2>
+    <% }) %>

@@ -1,0 +1,34 @@
+<a href="/users/<%= article.userId%>/articles">Back</a> <br />
+<a href="/users/<%=article.userId%>/articles/new">Add Article</a> <br />
+<a href="/users/logout">Logout</a> <br />
+
+<h2><%= article.title%></h2>
+<p><%= article.description%></p>
+<cite> <%= article.author%> </cite> <br />
+
+<span> <%=article.likes%> </span>
+<a href="/users/<%=article.userId%>/articles/<%=article.slug%>/like">Like</a>
+<a href="/users/<%=article.userId%>/articles/<%=article.slug%>/dislike"
+  >Dislike</a
+>
+<br />
+<a href="/users/<%=article.userId%>/articles/<%=article.slug%>/edit">Edit</a>
+<a href="/users/<%=article.userId%>/articles/<%=article.slug%>/delete"
+  >Delete</a
+>
+
+<form action="/users/articles/<%=article._id%>/comment" method="POST">
+  <h2>Comment</h2>
+  <input type="text" name="title" placeholder="Title" />
+  <button type="submit">Comment</button>
+</form>
+
+<% article.comment.forEach((commnt)=>{ %>
+<span> <%= commnt.title%></span> <br />
+<span><%=commnt.like%></span> <br />
+<a href="/comments/<%=commnt._id%>/like">Like</a>
+<a href="/comments/<%=commnt._id%>/dislike">dislike</a> <br />
+<a href="/comments/<%=commnt._id%>/edit">Edit</a>
+<a href="/comments/<%=commnt._id%>/delete">Delete</a>
+
+<% })%>
