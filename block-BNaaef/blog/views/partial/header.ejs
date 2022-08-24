@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <% if(user){ %>
+    <header>
+      <nav>
+        <ul>
+          <li>
+            <h2><%=user.firstName%></h2>
+          </li>
+          <li>
+            <a href="/users/logout">Logout</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <% } else {%>
+    <header>
+      <nav>
+        <ul>
+          <li>
+            <a href="/users/register">Register</a>
+          </li>
+          <li>
+            <a href="/auth/github">Login with github</a>
+          </li>
+          <li>
+            <a href="/auth/google">Login with google</a>
+          </li>
+          <li>
+            <a href="/users/login">Login Manually</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <% } %>
+  </body>
+</html>

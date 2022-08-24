@@ -1,0 +1,28 @@
+<% include partial/header %>
+<a href="/users/<%=article.userId%>/articles/<%=article.slug%>">Back</a>
+
+<form
+  action="/users/<%=article.userId%>/articles/<%=article.slug%>/edit"
+  method="POST"
+>
+  <h2>Update Article</h2>
+  <input
+    type="text"
+    name="title"
+    placeholder="Title"
+    value="<%=article.title%>"
+  />
+  <br />
+  <textarea name="description" rows="10" placeholder="Description">
+<%=article.description%></textarea
+  >
+  <br />
+  <input
+    type="text"
+    name="author"
+    placeholder="Author"
+    value="<%=article.author%>"
+  />
+  <br />
+  <button type="submit">Update article</button>
+</form>
